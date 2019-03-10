@@ -4,8 +4,8 @@
 
 // Prompt Player 1 to enter a word to guess and store
 // as a variable.
-var word = prompt("Player 1, Enter your secret word.");
-
+var word = document.getElementsByClassName("GuessWord");
+word.innerHTML="Player 1, Enter your secret word.";
 // Create another array to store good guesses
 var secret = [];
 // Create a variable to store the number of bad guesses

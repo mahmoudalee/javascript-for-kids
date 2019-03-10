@@ -1,0 +1,48 @@
+body{
+    background: url(back.jpg);
+    background-size: 100%;
+    background-repeat : no-repeat;
+}
+.container {
+    margin: 0 auto;
+    text-align: center;
+    padding: 12%;
+}
+.letter[title =" "] {
+    display: inline-block;
+    color: transparent;
+    border-bottom: 5px solid black;
+    margin: 0 10px;
+    font-size: 50px;
+    padding: 10px;
+    transition: .5s;
+    text-transform: uppercase;
+}
+.letter[title ="*"] {
+    display: inline-block;
+    color: lime;
+    border-bottom: 5px solid black;
+    margin: 0 10px;
+    font-size: 50px;
+    padding: 10px;
+    transition: .5s;
+    text-transform: uppercase;
+}
+.wrongLetters {
+    font-size: 20px;
+}
+p {
+    margin-bottom: 10px;
+  }
+.wrongLetters > li{
+    display: inline-block;
+    font-size: 40px;
+    background:lighten(red,55%);
+    text-shadow: 1px 2px 5px red;
+    padding: 10px;
+    color: rgb(243, 193, 193);
+    text-transform: uppercase;
+    margin-right: 10px;
+    animation: letteranim .3s ease;
+
+}

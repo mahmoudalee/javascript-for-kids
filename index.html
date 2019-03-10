@@ -1,9 +1,26 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>JavaScript for Kids</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  -->
   </head>
-  <body>
-    <script src="word-guess.js"></script>
+  <body onload="start()">
+    <div class="container" >
+      <div class="row">
+        <p id="guessWord"> Player 1 ,Enter your secret word</p>
+        <input id="letters" type="text" />
+        <button type="submit" onclick="check()" id="checkBtn" >Guess</button>
+      </div>
+      <div class="wrong">
+          <div id="wrongLetters"></div>
+      </div>
+    </div>
+    <script src="guess.js"></script>
   </body>
 </html>
