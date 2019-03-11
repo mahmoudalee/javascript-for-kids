@@ -22,7 +22,7 @@ function start() {
     });
 }
 function check() {
-    if(input.value == "")
+    if(input.value == "" && strikes < 3)
     {
         res.innerHTML = "You need to enter any thing ^_^";
     }
