@@ -37,9 +37,7 @@ function check() {
             //play again
             gameOver();
         }
-        
     }
-
 }
 
 function begain() {
@@ -52,7 +50,7 @@ function begain() {
     var frag = "<ul class='word'>";
     for (let i = 0; i < word.length; i++) {
         secret.push("_");
-        header.innerHTML += "<li data-pos='" +  i  + "' title = ' ' class='letter'>*</li>";
+        header.innerHTML += "<li title = ' ' class='letter'>*</li>";
     }
     frag += "</ul>";
 }
@@ -68,7 +66,10 @@ function play() {
         input.focus();
         alert("Bad guess!");
         wrongGuesses();
-    } else {
+    } 
+    // Correct guess 
+    //css added by using "title" as a key to check 
+    else {
         for (i = 0; i < word.length; i++) {
           if (word[i] === input.value) {
             secret[i] = input.value;
@@ -78,15 +79,18 @@ function play() {
         frag = "<ul class='word'>";
         for (let i = 0; i < word.length; i++) {
             if(secret[i] != "_")
-                header.innerHTML += "<li data-pos='" +  i  + "' title = '*' class='letter'>"+secret[i]+"</li>";
+                header.innerHTML += "<li title = '*' class='letter'>"+secret[i]+"</li>";
             else
-                header.innerHTML += "<li data-pos='" +  i  + "' title = ' ' class='letter'>"+secret[i]+"</li>";
+                header.innerHTML += "<li title = ' ' class='letter'>"+secret[i]+"</li>";
         }
         frag += "</ul>";
         input.value= "";
         input.focus();
 
+
         out = secret.toString().replace(',','');
+
+        //Win
         if(out == word)
         {
             // alert("Congratulations on your win!");
@@ -98,6 +102,7 @@ function play() {
 }
 
 function wrongGuesses() {
+    //show wrong words every time from array
     var frag = "<ul class='wrongLetters'>";
         frag += "<p>Wrong Letters: </p>";
         for (let i = 0; i < wrongLetters.length; i++) {       
@@ -105,6 +110,7 @@ function wrongGuesses() {
         }
         frag += "</ul>";
         res.innerHTML = frag;
+    //Lose
     if (strikes >= 3){
         btn.innerHTML= "Restart ^_^";
         res.innerHTML = "Try Again  <br/> Push Enter to Restart";
