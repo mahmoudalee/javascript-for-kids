@@ -1,6 +1,14 @@
-// Guess the word one letter at a time.
-// Each player is only allowed to guess
-// wrong three times.
+window.onload=function()
+{
+    /*hide/show placeholder (start) */
+    var secret=document.getElementById('secret'),
+    guess=document.getElementById('guess');
+    secret.onfocus=function()
+    {
+        
+        secret.setAttribute("del",this.getAttribute("placeholder"));
+        secret.setAttribute("placeholder",'');
+
 
 // Prompt Player 1 to enter a word to guess and store
 // as a variable.
@@ -40,17 +48,6 @@ while (strikes < 3 && secret.indexOf("_") >= 0) {
       // add it as a good guess in the same spot
       if (word[i] === letter) {
         secret[i] = letter;
-      }
-    }
-  }
+   
+   
 }
-
-// Once the player has exited the loop, congratulate
-// them on a win, or tell them they have lost and show
-// the secret word.
-if (strikes === 3) {
-  alert("Sorry, please play again!");
-} else {
-  alert("Congratulations on your win!");
-}
-alert("The secret word was " + word);
